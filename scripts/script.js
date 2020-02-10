@@ -1,7 +1,7 @@
-console.log("suh dude");
 
 
-var samples = {
+const samples = {
+    
     // first row variables
     "49": new Audio("./samples/clapOne.wav"),
     "50": new Audio("./samples/clapTwo.wav"),
@@ -19,26 +19,40 @@ var samples = {
     "83": new Audio("./samples/kickTwo.wav"),
     "68": new Audio("./samples/kickThree.wav"),
     "70": new Audio("./samples/kickFour.wav"),
-
+    
     // fourth row variables
     "90": new Audio("./samples/bassC.wav"),
     "88": new Audio("./samples/bassF.wav"),
     "67": new Audio("./samples/bassG.wav"),
     "86": new Audio("./samples/bassB.wav"),
+
+    // figure out how to target object
+    test: () => {
+        $(this).keydown(function (event) {
+            const key = event.keyCode.toString();
+            samples[key].currentTime = 0;
+            samples[key].play();
+            console.log(key);
+        });
+    }
 }
 
 
-document.addEventListener("keydown", function(e) {
-    let keyCode = e.keyCode;
-    let keyCodeString = keyCode.toString();
-    console.log(keyCodeString);
-    samples[keyCodeString].play();
-    
+// init fn
+samples.init = function() {
+    samples.test();
+};
 
 
+// doc ready
+$(function() {
+    samples.init();
+});
 
-    // let audio = document.querySelector("audio[id='" + keyCode + "']");
-    // audio.play();
-    // audio.currentTime = 0;
-})
 
+// add this to name space
+// document.addEventListener("keydown", function (event) {
+//     const key = event.keyCode.toString();
+//     samples[key].currentTime = 0;
+//     samples[key].play();
+// })
