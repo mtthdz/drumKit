@@ -1,5 +1,17 @@
 
 
+// notes
+// order:
+//   1. namespace declaration (initial key & values)
+//   2. namespace methods
+//   3. init function
+//   4. document ready function
+
+// questions:
+//   1. the relationship with arrow fn's and "this": did I use it in the intended manner re: line 49
+//   2. 
+
+
 // namespace
 const samples = {
     
@@ -30,21 +42,10 @@ const samples = {
 }
 
 
-// keyboard event method
-// event.keyCode retrieves the code of the key pressed
-// .toString() converts the keyCode from number to string, as numbers can't be used as object keys
-samples.keyboard = () => {
-    $(this).keydown(function (event) {
-        const key = event.keyCode.toString();
-        samples[key].currentTime = 0;
-        samples[key].play();
-    });
-},
-
 // click event method (MVP)
 // this.className retrieves both classes of the div clicked in the form of a string
 // .slice(9, 11) removes first class name and whitespace
-samples.click = function () {
+samples.clickEvent = function () {
     $(".drumBeat").on("click", function () {
         const classes = this.className.slice(9, 11);
         samples[classes].currenTime = 0;
@@ -53,13 +54,30 @@ samples.click = function () {
 },
 
 
+// keyboard event method
+// arrow fn is used to target the document object with "this"
+// event.keyCode retrieves the code of the key pressed
+// .toString() converts the keyCode from number to string, as numbers can't be used as object keys
+samples.keyboardEvent = () => {
+    $(this).keydown(function(event) {
+        const key = event.keyCode.toString();
+        samples[key].currentTime = 0;
+        samples[key].play();
+    });
+},
+
+
 /////////////////////////////////////
+
 
 // init fn
 samples.init = function() {
-    samples.keyboard();
-    samples.click();
+    this.keyboardEvent();
+    this.clickEvent();
 };
+
+
+/////////////////////////////////////
 
 
 // doc ready fn
