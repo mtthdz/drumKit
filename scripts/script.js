@@ -1,5 +1,6 @@
 
 
+// namespace
 const samples = {
     
     // first row variables
@@ -26,33 +27,43 @@ const samples = {
     "67": new Audio("./samples/bassG.wav"),
     "86": new Audio("./samples/bassB.wav"),
 
-    // figure out how to target object
-    test: () => {
-        $(this).keydown(function (event) {
-            const key = event.keyCode.toString();
-            samples[key].currentTime = 0;
-            samples[key].play();
-            console.log(key);
-        });
-    }
 }
 
 
+// keyboard event method
+// event.keyCode retrieves the code of the key pressed
+// .toString() converts the keyCode from number to string, as numbers can't be used as object keys
+samples.keyboard = () => {
+    $(this).keydown(function (event) {
+        const key = event.keyCode.toString();
+        samples[key].currentTime = 0;
+        samples[key].play();
+    });
+},
+
+// click event method (MVP)
+// this.className retrieves both classes of the div clicked in the form of a string
+// .slice(9, 11) removes first class name and whitespace
+samples.click = function () {
+    $(".drumBeat").on("click", function () {
+        const classes = this.className.slice(9, 11);
+        samples[classes].currenTime = 0;
+        samples[classes].play();
+    });
+},
+
+
+/////////////////////////////////////
+
 // init fn
 samples.init = function() {
-    samples.test();
+    samples.keyboard();
+    samples.click();
 };
 
 
-// doc ready
+// doc ready fn
 $(function() {
     samples.init();
 });
 
-
-// add this to name space
-// document.addEventListener("keydown", function (event) {
-//     const key = event.keyCode.toString();
-//     samples[key].currentTime = 0;
-//     samples[key].play();
-// })
