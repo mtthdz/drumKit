@@ -234,3 +234,108 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+html {
+  font-size: 62.5%;
+  /* 16px * 62.5% = 10px */
+}
+
+body {
+  font-size: 1.6rem;
+  /* 10px * 1.6rem = 16px */
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  border: 2px black solid;
+  background-color: #666666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.drumKit {
+  background-color: #4d4d4d;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.instructions {
+  color: #FFFFFF;
+  font-weight: normal;
+  padding: 3%;
+}
+
+.label,
+.drumBeat {
+  background-color: #858585;
+  color: #FFFFFF;
+  width: calc(100% / 5);
+  border: none;
+  margin: 1px;
+  height: 100px;
+}
+
+.label {
+  margin-right: 3px;
+  margin-left: 0;
+}
+
+.drumBeat:nth-child(5) {
+  margin-right: 0;
+}
+
+.row:nth-child(5) .label,
+.row:nth-child(5) .drumBeat {
+  margin-bottom: 0;
+}
+
+.inputKey {
+  text-transform: uppercase;
+}
