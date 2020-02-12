@@ -46,10 +46,16 @@ const samples = {
 // this.className retrieves both classes of the div clicked in the form of a string
 // .slice(9, 11) removes first class name and whitespace
 samples.clickEvent = function () {
-    $(".drumBeat").on("click", function () {
+    $(".drumBeat").mousedown(function () {
         const classes = this.className.slice(9, 11);
         samples[classes].currenTime = 0;
         samples[classes].play();
+        $(`.${classes}`).css("background-color", "#00e3cd");
+
+    }).mouseup(function(){
+        const classes = this.className.slice(9, 11);
+        $(`.${classes}`).css("background-color", "#858585");
+
     });
 },
 
@@ -63,6 +69,12 @@ samples.keyboardEvent = () => {
         const key = event.keyCode.toString();
         samples[key].currentTime = 0;
         samples[key].play();
+        $(`.${key}`).css("background-color", "#00e3cd");
+
+    }).keyup(function(event) {
+        const key = event.keyCode.toString();
+        $(`.${key}`).css("background-color", "#858585");
+        
     });
 },
 
