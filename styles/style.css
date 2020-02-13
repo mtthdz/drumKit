@@ -314,8 +314,8 @@ body {
 
 .label,
 .drumBeat {
-  background-color: #858585;
-  color: #FFFFFF;
+  background-color: #D0D0D1;
+  color: #4d4d4d;
   width: calc(100% / 5);
   border: none;
   margin: 1px;

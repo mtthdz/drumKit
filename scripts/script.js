@@ -9,7 +9,7 @@
 
 // questions:
 //   1. the relationship with arrow fn's and "this": did I use it in the intended manner re: line 49
-//   2. 
+//   2. for the second event handler in both functions, is it better practice to change variable names?
 
 
 // namespace
@@ -39,22 +39,30 @@ const samples = {
     "67": new Audio("./samples/bassG.wav"),
     "86": new Audio("./samples/bassB.wav"),
 
+    // color randomizer
+    "1": "#F7EC4F", // yellow
+    "2": "#F79665", // orange
+    "3": "#63FFE5", // blue
+    "4": "#24FF9E", // green
+
 }
 
 
 // click event method (MVP)
 // this.className retrieves both classes of the div clicked in the form of a string
 // .slice(9, 11) removes first class name and whitespace
-samples.clickEvent = function () {
-    $(".drumBeat").mousedown(function () {
+samples.clickEvent = function() {
+    $(".drumBeat").mousedown(function() {
         const classes = this.className.slice(9, 11);
         samples[classes].currenTime = 0;
         samples[classes].play();
-        $(`.${classes}`).css("background-color", "#00e3cd");
+        colorValue = Math.floor(Math.random() * 4) + 1;
+
+        $(`.${classes}`).css("background-color", `${samples[colorValue]}`);
 
     }).mouseup(function(){
         const classes = this.className.slice(9, 11);
-        $(`.${classes}`).css("background-color", "#858585");
+        $(`.${classes}`).css("background-color", "#D0D0D1");
 
     });
 },
@@ -69,11 +77,13 @@ samples.keyboardEvent = () => {
         const key = event.keyCode.toString();
         samples[key].currentTime = 0;
         samples[key].play();
-        $(`.${key}`).css("background-color", "#00e3cd");
+        colorValue = Math.floor(Math.random() * 4) + 1;
+
+        $(`.${key}`).css("background-color", `${samples[colorValue]}`);
 
     }).keyup(function(event) {
         const key = event.keyCode.toString();
-        $(`.${key}`).css("background-color", "#858585");
+        $(`.${key}`).css("background-color", "#D0D0D1");
         
     });
 },
@@ -86,6 +96,7 @@ samples.keyboardEvent = () => {
 samples.init = function() {
     this.keyboardEvent();
     this.clickEvent();
+
 };
 
 
@@ -95,5 +106,6 @@ samples.init = function() {
 // doc ready fn
 $(function() {
     samples.init();
+
 });
 
