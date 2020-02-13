@@ -18,22 +18,22 @@ const samples = {
     "52": new Audio("./samples/inception.mp3"),
 
     // second row variables
-    "81": new Audio("./samples/snareOne.wav"),
-    "87": new Audio("./samples/snareTwo.wav"),
-    "69": new Audio("./samples/snareThree.wav"),
-    "82": new Audio("./samples/snareFour.wav"),
+    "81": new Audio("./samples/hatClosedOne.wav"),
+    "87": new Audio("./samples/hatClosedTwo.wav"),
+    "69": new Audio("./samples/hatOpenOne.wav"),
+    "82": new Audio("./samples/hatOpenTwo.wav"),
 
     // third row variables
-    "65": new Audio("./samples/kickOne.wav"),
-    "83": new Audio("./samples/kickTwo.wav"),
-    "68": new Audio("./samples/kickThree.wav"),
-    "70": new Audio("./samples/kickFour.wav"),
+    "65": new Audio("./samples/snareOne.wav"),
+    "83": new Audio("./samples/snareTwo.wav"),
+    "68": new Audio("./samples/snareThree.wav"),
+    "70": new Audio("./samples/snareFour.wav"),
     
     // fourth row variables
-    "90": new Audio("./samples/bassC.wav"),
-    "88": new Audio("./samples/bassF.wav"),
-    "67": new Audio("./samples/bassG.wav"),
-    "86": new Audio("./samples/bassB.wav"),
+    "90": new Audio("./samples/kickOne.wav"),
+    "88": new Audio("./samples/kickTwo.wav"),
+    "67": new Audio("./samples/kickThree.wav"),
+    "86": new Audio("./samples/kickFour.wav"),
 
     // color randomizer
     "1": "#F7EC4F", // yellow
