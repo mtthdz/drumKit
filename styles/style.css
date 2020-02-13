@@ -273,7 +273,6 @@ a {
 }
 
 body {
-  border: 2px black solid;
   background-color: #666666;
   display: -webkit-box;
   display: -ms-flexbox;
