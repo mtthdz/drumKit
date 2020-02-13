@@ -8,8 +8,16 @@
 
 @media (max-width: 768px) {
 
+    body {
+        align-items: flex-start;
+    }
+
     .drumKit {
         width: 100%;
+
+        .inputKey {
+            display: none;
+        }
     }
 }
 

@@ -248,19 +248,6 @@ body {
   width: 100vw;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -287,7 +274,7 @@ body {
 
 .drumKit {
   background-color: #4d4d4d;
-  width: 50vw;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,8 +343,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
   .drumKit {
     width: 100%;
+  }
+  .drumKit .inputKey {
+    display: none;
   }
 }
 

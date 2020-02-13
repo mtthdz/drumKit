@@ -9,7 +9,7 @@ body {
 
 .drumKit {
     background-color: #4d4d4d;
-    width: 50vw;
+    width: 60vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -34,11 +34,13 @@ body {
             height: 100px;
         }
 
+        // this will have all drum pads aligned with heading
         .label {
             margin-right: 3px;
             margin-left: 0;
         }
 
+        // this will have all drum pads aligned with heading
         .drumBeat:nth-child(5) {
             margin-right: 0;
         }
@@ -54,6 +56,7 @@ body {
         height: 50px;
     }
 
+    // this will have all drum pads aligned with heading
     .row:nth-child(5) .label,
     .row:nth-child(5) .drumBeat {
         margin-bottom: 0;
@@ -61,4 +64,3 @@ body {
 }
 
    
-

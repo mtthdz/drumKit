@@ -7,10 +7,6 @@
 //   3. init function
 //   4. document ready function
 
-// questions:
-//   1. the relationship with arrow fn's and "this": did I use it in the intended manner re: line 49
-//   2. for the second event handler in both functions, is it better practice to change variable names?
-
 
 // namespace
 const samples = {
