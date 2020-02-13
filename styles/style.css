@@ -298,21 +298,21 @@ body {
           justify-content: space-evenly;
 }
 
-.row {
+.drumKit .row {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.instructions {
+.drumKit .row .instructions {
   color: #FFFFFF;
   font-weight: normal;
-  padding: 3%;
+  padding-left: 3%;
 }
 
-.label,
-.drumBeat {
+.drumKit .row .label,
+.drumKit .row .drumBeat {
   background-color: #D0D0D1;
   color: #4d4d4d;
   width: calc(100% / 5);
@@ -321,20 +321,54 @@ body {
   height: 100px;
 }
 
-.label {
+.drumKit .row .label {
   margin-right: 3px;
   margin-left: 0;
 }
 
-.drumBeat:nth-child(5) {
+.drumKit .row .drumBeat:nth-child(5) {
   margin-right: 0;
 }
 
-.row:nth-child(5) .label,
-.row:nth-child(5) .drumBeat {
+.drumKit .row .inputKey {
+  text-transform: uppercase;
+}
+
+.drumKit .row:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+.drumKit .row:nth-child(5) .label,
+.drumKit .row:nth-child(5) .drumBeat {
   margin-bottom: 0;
 }
 
-.inputKey {
-  text-transform: uppercase;
+@media (max-width: 1060px) {
+  .drumKit {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .drumKit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .drumKit .row .label,
+  .drumKit .row .drumBeat {
+    background-color: #D0D0D1;
+    color: #4d4d4d;
+    width: calc(100% / 5);
+    border: none;
+    margin: 1px;
+    height: 60px;
+  }
 }

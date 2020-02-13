@@ -18,8 +18,8 @@ const samples = {
     // first row variables
     "49": new Audio("./samples/clapOne.wav"),
     "50": new Audio("./samples/clapTwo.wav"),
-    "51": new Audio("./samples/triangle.wav"),
-    "52": new Audio("./samples/voxCymbal.wav"),
+    "51": new Audio("./samples/airhorn.wav"),
+    "52": new Audio("./samples/inception.mp3"),
 
     // second row variables
     "81": new Audio("./samples/snareOne.wav"),
@@ -51,6 +51,7 @@ const samples = {
 // click event method (MVP)
 // this.className retrieves both classes of the div clicked in the form of a string
 // .slice(9, 11) removes first class name and whitespace
+// colorValue returns a random color from the sample object 
 samples.clickEvent = function() {
     $(".drumBeat").mousedown(function() {
         const classes = this.className.slice(9, 11);
@@ -72,6 +73,7 @@ samples.clickEvent = function() {
 // arrow fn is used to target the document object with "this"
 // event.keyCode retrieves the code of the key pressed
 // .toString() converts the keyCode from number to string, as numbers can't be used as object keys
+// colorValue returns a random color from the sample object 
 samples.keyboardEvent = () => {
     $(this).keydown(function(event) {
         const key = event.keyCode.toString();
@@ -96,7 +98,6 @@ samples.keyboardEvent = () => {
 samples.init = function() {
     this.keyboardEvent();
     this.clickEvent();
-
 };
 
 
@@ -106,6 +107,5 @@ samples.init = function() {
 // doc ready fn
 $(function() {
     samples.init();
-
 });
 
