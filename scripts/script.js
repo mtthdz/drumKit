@@ -51,7 +51,7 @@ const samples = {
 samples.clickEvent = function() {
     $(".drumBeat").mousedown(function() {
         const classes = this.className.slice(9, 11);
-        samples[classes].currenTime = 0;
+        samples[classes].currentTime = 0;
         samples[classes].play();
         colorValue = Math.floor(Math.random() * 4) + 1;
 
@@ -73,6 +73,7 @@ samples.clickEvent = function() {
 samples.keyboardEvent = () => {
     $(this).keydown(function(event) {
         const key = event.keyCode.toString();
+        console.log(key);
         samples[key].currentTime = 0;
         samples[key].play();
         colorValue = Math.floor(Math.random() * 4) + 1;
@@ -80,6 +81,7 @@ samples.keyboardEvent = () => {
         $(`.${key}`).css("background-color", `${samples[colorValue]}`);
 
     }).keyup(function(event) {
+        console.log(key);
         const key = event.keyCode.toString();
         $(`.${key}`).css("background-color", "#D0D0D1");
         
