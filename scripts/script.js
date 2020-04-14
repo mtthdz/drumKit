@@ -1,4 +1,5 @@
 
+// to get anime js working, you must move  the anime.min.js file into the scripts folder; keep the script tag within the html.
 
 // namespace
 const samples = {
