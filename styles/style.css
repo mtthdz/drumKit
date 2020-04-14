@@ -331,13 +331,9 @@ a {
 }
 
 .drumKit .visualizer .visualizerBar {
-  height: 2%;
+  height: 0%;
   width: calc((100% / 10) - 2%);
-  background-color: #1bcf6d;
-}
-
-.drumKit .visualizer .a {
-  height: 90%;
+  background-color: #3dffe8;
 }
 
 .drumSection {
