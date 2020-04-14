@@ -1,40 +1,61 @@
 
 
-@media (max-width: 1060px) {
-    .drumKit {
-        width: 80vw;
+@media (max-width: 700px) {
+  .drumKit {
+    .visualizer {
+      height: 50vh;
     }
+  }
+
+  .drumBeat {
+    height: 100px;
+  }
 }
 
-@media (max-width: 768px) {
 
-    body {
-        align-items: flex-start;
+@media (max-width: 544px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .drumBeat {
+    .inputKey {
+      display: none;
     }
-
-    .drumKit {
-        width: 100%;
-
-        .inputKey {
-            display: none;
-        }
-    }
+  }
 }
+
+
+@media (max-width: 480px) {
+  .drumKit {
+    .visualizer {
+      height: 40vh;
+    }
+  }
+
+  .drumBeat {
+    height: 80px;
+    border: 4px #222222 solid;
+    border-right: 0px #222222 solid;
+
+    .inputDescription {
+      font-size: 1.4rem;
+    }
+  }
+
+  .drumBeat:last-child {
+    border: 4px #222222 solid;
+  }
+}
+
 
 @media (max-width: 400px) {
+  .wrapper {
+    width: 95%;
+  }
 
-    .drumKit {
-        .row {
-            .label,
-            .drumBeat {
-                background-color: #D0D0D1;
-                color: #4d4d4d;
-                width: calc(100% / 5);
-                border: none;
-                margin: 1px; 
-                height: 60px;
-            }
-        }    
-    }
+  .drumBeat {
+    height: 70px;  
+  }
 }
 

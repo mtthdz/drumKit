@@ -1,92 +1,113 @@
 
 
-// notes
-// order:
-//   1. namespace declaration (initial key & values)
-//   2. namespace methods
-//   3. init function
-//   4. document ready function
-
-
 // namespace
 const samples = {
-    
-    // first row variables
-    "49": new Audio("./samples/clapOne.wav"),
-    "50": new Audio("./samples/clapTwo.wav"),
-    "51": new Audio("./samples/airhorn.wav"),
-    "52": new Audio("./samples/inception.mp3"),
+	// audio sample lookup
+	"81": new Audio("./samples/kick.wav"),
+	"87": new Audio("./samples/snare.wav"),
+	"69": new Audio("./samples/hatClosed.wav"),
+	"82": new Audio("./samples/hatOpen.wav"),
+	"84": new Audio("./samples/clap.wav"),
 
-    // second row variables
-    "81": new Audio("./samples/hatClosedOne.wav"),
-    "87": new Audio("./samples/hatClosedTwo.wav"),
-    "69": new Audio("./samples/hatOpenOne.wav"),
-    "82": new Audio("./samples/hatOpenTwo.wav"),
-
-    // third row variables
-    "65": new Audio("./samples/snareOne.wav"),
-    "83": new Audio("./samples/snareTwo.wav"),
-    "68": new Audio("./samples/snareThree.wav"),
-    "70": new Audio("./samples/snareFour.wav"),
-    
-    // fourth row variables
-    "90": new Audio("./samples/kickOne.wav"),
-    "88": new Audio("./samples/kickTwo.wav"),
-    "67": new Audio("./samples/kickThree.wav"),
-    "86": new Audio("./samples/kickFour.wav"),
-
-    // color randomizer
-    "1": "#F7EC4F", // yellow
-    "2": "#F79665", // orange
-    "3": "#63FFE5", // blue
-    "4": "#24FF9E", // green
-
+	// visualizer array
+	bar: [".a", ".b", ".c", ".d", ".e", ".f", ".g", ".h", ".i", ".j"],
 }
 
 
-// click event method (MVP)
-// this.className retrieves both classes of the div clicked in the form of a string
-// .slice(9, 11) removes first class name and whitespace
-// colorValue returns a random color from the sample object 
+// click event
 samples.clickEvent = function() {
-    $(".drumBeat").mousedown(function() {
-        const classes = this.className.slice(9, 11);
-        samples[classes].currentTime = 0;
-        samples[classes].play();
-        colorValue = Math.floor(Math.random() * 4) + 1;
+	$(".drumBeat").mousedown(function() {
+		const classes = this.className.slice(9, 11);
+		samples[classes].currentTime = 0;
+		samples[classes].play();
+		samples.animate();
+		$(`.${classes}`).css("background-color", "#f7ec4f");
+		samples.focus(`.${classes}`);
 
-        $(`.${classes}`).css("background-color", `${samples[colorValue]}`);
+	}).mouseup(function(){
+		const classes = this.className.slice(9, 11);
+		$(`.${classes}`).css("background-color", "#ffffff");
+		samples.focus(`.${classes}`);
 
-    }).mouseup(function(){
-        const classes = this.className.slice(9, 11);
-        $(`.${classes}`).css("background-color", "#D0D0D1");
-
-    });
+	});
 },
 
 
-// keyboard event method
-// arrow fn is used to target the document object with "this"
-// event.keyCode retrieves the code of the key pressed
-// .toString() converts the keyCode from number to string, as numbers can't be used as object keys
-// colorValue returns a random color from the sample object 
+// keyboard event
 samples.keyboardEvent = () => {
-    $(this).keydown(function(event) {
-        const key = event.keyCode.toString();
-        console.log(key);
-        samples[key].currentTime = 0;
-        samples[key].play();
-        colorValue = Math.floor(Math.random() * 4) + 1;
+	$(this).keydown(function(event) {
+		const key = event.keyCode.toString();
+		samples[key].currentTime = 0;
+		samples[key].play();
+		samples.animate();		
+		$(`.${key}`).css("background-color", "#f7ec4f");
+		samples.focus(`.${key}`);
 
-        $(`.${key}`).css("background-color", `${samples[colorValue]}`);
-
-    }).keyup(function(event) {
-        console.log(key);
-        const key = event.keyCode.toString();
-        $(`.${key}`).css("background-color", "#D0D0D1");
-        
-    });
+	}).keyup(function(event) {
+		const key = event.keyCode.toString();
+		$(`.${key}`).css("background-color", "#ffffff");
+		samples.focus(`.${key}`);			
+	});
 },
+
+
+samples.animate = function() {
+	const random = Math.floor(Math.random() * 6) + 2;
+	const peak = samples.bar[random];
+	const minusOne = samples.bar[random - 1];
+	const minusTwo = samples.bar[random - 2];
+	const plusOne = samples.bar[random + 1];
+	const plusTwo = samples.bar[random + 2];
+
+	anime({
+		targets: ".visualizerBar",
+		height: ["0%", "5%"],
+		easing: "easeInOutQuad",
+		direction: 'alternate',
+		duration: 165,
+	})
+
+	anime({
+		targets: peak,
+		height: ["0%", "90%"],
+		easing: "easeInOutQuad",
+		direction: 'alternate',
+		duration: 150,
+	});
+
+	anime({
+		targets: minusOne,
+		height: ["0%", "60%"],
+		easing: "easeInOutQuad",
+		direction: 'alternate',
+		duration: 155,
+	})
+
+	anime({
+		targets: [minusTwo, plusOne],
+		height: ["0%", "30%"],
+		easing: "easeInOutQuad",
+		direction: 'alternate',
+		duration: 160,
+	})
+
+	anime({
+		targets: plusTwo,
+		height: ["0%", "15%"],
+		easing: "easeInOutQuad",
+		direction: 'alternate',
+		duration: 160,
+	})
+}
+
+
+samples.focus = function(played) {
+	$(played).focusin(function() {
+		$(played).css("background-color", "#f7ec4f");
+	}).focusout(function() {
+		$(played).css("background-color", "#ffffff");
+	})
+}
 
 
 /////////////////////////////////////
@@ -94,8 +115,8 @@ samples.keyboardEvent = () => {
 
 // init fn
 samples.init = function() {
-    this.keyboardEvent();
-    this.clickEvent();
+	this.keyboardEvent();
+	this.clickEvent();
 };
 
 
@@ -104,6 +125,6 @@ samples.init = function() {
 
 // doc ready fn
 $(function() {
-    samples.init();
+	samples.init();
 });
 
