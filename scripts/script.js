@@ -41,6 +41,24 @@ const samples = {
     "3": "#63FFE5", // blue
     "4": "#24FF9E", // green
 
+    // visualizer array
+    // rng selects random className within array between c - h
+    // rng +/- will select surrounding divs to increase height to add the "wave" look
+    bar: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
+}
+
+// visualizer fn
+samples.visualizer = () => {
+    $(".drumBeat").mousedown(function() {
+        const random = Math.floor(Math.random() * 6) + 2;
+        const peak = samples.bar[random];
+        const minusOne = samples.bar[random - 1];
+        const minusTwo = samples.bar[random - 2];
+        const plusOne = samples.bar[random + 1];
+        const plusTwo = samples.bar[random + 2];
+        
+        
+    });
 }
 
 
@@ -73,7 +91,6 @@ samples.clickEvent = function() {
 samples.keyboardEvent = () => {
     $(this).keydown(function(event) {
         const key = event.keyCode.toString();
-        console.log(key);
         samples[key].currentTime = 0;
         samples[key].play();
         colorValue = Math.floor(Math.random() * 4) + 1;
@@ -81,7 +98,6 @@ samples.keyboardEvent = () => {
         $(`.${key}`).css("background-color", `${samples[colorValue]}`);
 
     }).keyup(function(event) {
-        console.log(key);
         const key = event.keyCode.toString();
         $(`.${key}`).css("background-color", "#D0D0D1");
         
@@ -96,6 +112,7 @@ samples.keyboardEvent = () => {
 samples.init = function() {
     this.keyboardEvent();
     this.clickEvent();
+    this.visualizer();
 };
 
 

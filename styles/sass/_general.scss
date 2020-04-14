@@ -5,6 +5,7 @@ html {
 }
 
 body {
+    background-color: #222222;
     font-size: 1.6rem; /* 10px * 1.6rem = 16px */
     font-family: 'Roboto', sans-serif;
     height: 100vh;
@@ -16,9 +17,16 @@ body {
     padding: 0;   
 }
 
-.wrapper {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
+li {
+    list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+}

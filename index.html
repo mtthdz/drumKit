@@ -3,54 +3,85 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>drumkit</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/ed10b86544.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./styles/style.css">
+
+        <title>drumkit</title>
     </head>
 
 
     <body>
-        <main class="drumKit wrapper">
+        <header class="wrapper head">
+            <h1 class="headTitle">drumKit</h1>
 
-            <div class="row"><p class="instructions">You can use your keyboard or mouse.</p></div>
-            <!-- row 1 -->
-            <div class="row">
-                <button class="label"><p class="inputLabel">misc</p></button>
-                <button class="drumBeat 49"><p class="inputKey">1</p></button>
-                <button class="drumBeat 50"><p class="inputKey">2</p></button>
-                <button class="drumBeat 51"><p class="inputKey">3</p></button>
-                <button class="drumBeat 52"><p class="inputKey">4</p></button>
+            <nav class="headNav">
+                <ul class="navList">
+                    <li class="navOption">
+                        <a class="nav__link" target="_blank" href="https://github.com/mtthdz/drumkit">
+                        <i class="fab fa-github"></i></a>
+                    </li>
+
+                    <li class="navOption">
+                        <a class="navLink" target="_blank" href="https://www.twitter.com/mtthdz"><i class="fab fa-twitter"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main class="wrapper drumKit">
+            <div class="visualizer">
+                <div class="visualizerBar a"></div>
+                <div class="visualizerBar b"></div>
+                <div class="visualizerBar c"></div>
+                <div class="visualizerBar d"></div>
+                <div class="visualizerBar e"></div>
+                <div class="visualizerBar f"></div>
+                <div class="visualizerBar g"></div>
+                <div class="visualizerBar h"></div>
+                <div class="visualizerBar i"></div>
+                <div class="visualizerBar j"></div>
             </div>
 
-            <!-- row 2 -->
-            <div class="row">
-                <button class="label"><p class="inputLabel">cymbals</p></button>
-                <button class="drumBeat 81"><p class="inputKey">q</p></button>
-                <button class="drumBeat 87"><p class="inputKey">w</p></button>
-                <button class="drumBeat 69"><p class="inputKey">e</p></button>
-                <button class="drumBeat 82"><p class="inputKey">r</p></button>
-            </div>
 
-            <!-- row 3 -->
-            <div class="row">
-                <button class="label"><p class="inputLabel">snares</p></button>
-                <button class="drumBeat 65"><p class="inputKey">a</p></button>
-                <button class="drumBeat 83"><p class="inputKey">s</p></button>
-                <button class="drumBeat 68"><p class="inputKey">d</p></button>
-                <button class="drumBeat 70"><p class="inputKey">f</p></button>
-            </div>
+            <div class="drumSection">
+                <div class="infoContainer">
+                    <h2 class="infoTitle">808 Beats</h2>
+                    <p class="infoInstructions">use your keyboard or mouse</p>
+                </div>
 
-            <!-- row 4 -->
-            <div class="row">
-                <button class="label"><p class="inputLabel">kicks</p></button>
-                <button class="drumBeat 90"><p class="inputKey">z</p></button>
-                <button class="drumBeat 88"><p class="inputKey">x</p></button>
-                <button class="drumBeat 67"><p class="inputKey">c</p></button>
-                <button class="drumBeat 86"><p class="inputKey">v</p></button>
+                <div class="drums">
+                    <button class="drumBeat 90">
+                        <p class="inputDescription">Kick</p>
+                        <p class="inputKey">q</p>
+                    </button>
+
+                    <button class="drumBeat 65">
+                        <p class="inputDescription">Snare</p>
+                        <p class="inputKey">w</p>
+                    </button>
+
+                    <button class="drumBeat 81">
+                        <p class="inputDescription">Closed Hat</p>
+                        <p class="inputKey">e</p>
+                    </button>
+
+                    <button class="drumBeat 69">
+                        <p class="inputDescription">Open Hat</p>
+                        <p class="inputKey">r</p>
+                    </button>
+
+                    <button class="drumBeat 49">
+                        <p class="inputDescription">Clap</p>
+                        <p class="inputKey">t</p>
+                    </button>
+                </div>
             </div>
         </main>
 
-
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="./scripts/script.js"></script>
     </body>

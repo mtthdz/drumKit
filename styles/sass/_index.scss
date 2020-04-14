@@ -1,66 +1,127 @@
 
-
-body {
-    background-color: #666666;
+.head {
+    height: 10vh;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
+
+    .headTitle {
+        color: #ffffff;
+        font-size: 2.0rem;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+
+    .headNav {
+        width: 50px;
+    }
+}
+
+.navList {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .navOption {
+        .navLink {
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+    }
 }
 
 .drumKit {
-    background-color: #4d4d4d;
-    width: 60vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    .row {
+    .visualizer {
+        background-color: #222222;
         width: 100%;
+        height: 60vh;
         display: flex;
-
-        .instructions {
-            color: #FFFFFF;
-            font-weight: normal;
-            padding-left: 3%;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        
+        .visualizerBar {
+            height: 2%;
+            width: calc((100% / 10) - 2%);
+            background-color: #1bcf6d;
         }
 
-        .label,
-        .drumBeat {
-            background-color: #D0D0D1;
-            color: #4d4d4d;
-            width: calc(100% / 5);
-            border: none;
-            margin: 1px; 
-            height: 100px;
+        .a {
+            height: 90%;
         }
-
-        // this will have all drum pads aligned with heading
-        .label {
-            margin-right: 3px;
-            margin-left: 0;
-        }
-
-        // this will have all drum pads aligned with heading
-        .drumBeat:nth-child(5) {
-            margin-right: 0;
-        }
-
-        .inputKey {
-            text-transform: uppercase;
-        } 
-    }
-
-    .row:nth-child(1) {
-        display: flex;
-        align-items: center;
-        height: 50px;
-    }
-
-    // this will have all drum pads aligned with heading
-    .row:nth-child(5) .label,
-    .row:nth-child(5) .drumBeat {
-        margin-bottom: 0;
     }
 }
 
-   
+
+
+
+
+.drumSection {
+    background-color: #222222;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .infoContainer {
+        margin: 20px 0px 20px 20px;
+    }
+
+    .drums {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+
+.infoTitle {
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.infoInstructions {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 400;  
+}
+
+.drumBeat {
+    background-color: #ffffff;
+    border: 8px #222222 solid;
+    border-right: 0px #222222 solid;
+    width: calc(100% / 5);
+    height: 125px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .inputDescription {
+        color: #222222;
+        font-size: 1.6rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+    }
+
+    .inputKey {
+        color: #222222;
+        font-size: 2.0rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}
+
+.drumBeat:last-child {
+    border: 8px #222222 solid;
+}
+
+.fa-github {
+    color: #ffffff;
+}
