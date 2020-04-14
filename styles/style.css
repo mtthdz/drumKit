@@ -236,14 +236,14 @@ html {
 }
 
 html {
-  font-size: 62.5%;
   /* 16px * 62.5% = 10px */
+  font-size: 62.5%;
 }
 
 body {
   background-color: #222222;
-  font-size: 1.6rem;
   /* 10px * 1.6rem = 16px */
+  font-size: 1.6rem;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100vw;

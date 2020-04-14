@@ -1,85 +1,85 @@
 
 
 .drumKit {
-    .visualizer {
-        background-color: #222222;
-        width: 100%;
-        height: 60vh;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-end;
-        
-        .visualizerBar {
-            height: 0%;
-            width: calc((100% / 10) - 2%);
-            background-color: #3dffe8;
-        }
-    }
+	.visualizer {
+		background-color: #222222;
+		width: 100%;
+		height: 60vh;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-end;
+		
+		.visualizerBar {
+			height: 0%;
+			width: calc((100% / 10) - 2%);
+			background-color: #3dffe8;
+		}
+	}
 }
 
 
 .drumSection {
-    background-color: #222222;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+	background-color: #222222;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 
-    .infoContainer {
-        margin: 20px 0px 20px 20px;
-    }
+	.infoContainer {
+		margin: 20px 0px 20px 20px;
+	}
 
-    .drums {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
+	.drums {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
 }
 
 .infoTitle {
-    color: #ffffff;
-    font-size: 2.4rem;
-    font-weight: 700;
+	color: #ffffff;
+	font-size: 2.4rem;
+	font-weight: 700;
 }
 
 .infoInstructions {
-    color: #ffffff;
-    font-size: 1.6rem;
-    font-weight: 400;  
+	color: #ffffff;
+	font-size: 1.6rem;
+	font-weight: 400;  
 }
 
 .drumBeat {
-    background-color: #ffffff;
-    border: 8px #222222 solid;
-    border-right: 0px #222222 solid;
-    width: calc(100% / 5);
-    height: 125px;
+	background-color: #ffffff;
+	border: 8px #222222 solid;
+	border-right: 0px #222222 solid;
+	width: calc(100% / 5);
+	height: 125px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
 
-    .inputDescription {
-        color: #222222;
-        font-size: 1.6rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-    }
+	.inputDescription {
+		color: #222222;
+		font-size: 1.6rem;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+	}
 
-    .inputKey {
-        color: #222222;
-        font-size: 2.0rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        text-transform: capitalize;
-    }
+	.inputKey {
+		color: #222222;
+		font-size: 2.0rem;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		text-transform: capitalize;
+}
 }
 
 
 .drumBeat:last-child {
-    border: 8px #222222 solid;
+	border: 8px #222222 solid;
 }
 
 .drumBeat:focus {
@@ -88,5 +88,5 @@
 }
 
 .played {
-    background-color: #F7EC4F;
+	background-color: #F7EC4F;
 }
