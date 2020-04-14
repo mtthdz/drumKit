@@ -1,0 +1,49 @@
+
+
+.head {
+  height: 10vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .headTitle {
+    color: #ffffff;
+    font-size: 2.0rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+  }
+
+  .headNav {
+    width: 50px;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .navLink {
+    .fa-github, 
+    .fa-twitter {
+      color: #ffffff;
+      font-size: 1.6rem;
+      padding-bottom: 5px;
+    }
+  }
+
+  .navLink:focus,
+  .navLink:hover {
+    outline: none;
+    padding-bottom: 3px;
+    border-bottom: 2px #ffffff solid;
+  }
+}
+
+
+
+
+

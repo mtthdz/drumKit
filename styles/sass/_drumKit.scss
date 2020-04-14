@@ -1,38 +1,4 @@
 
-.head {
-    height: 10vh;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    .headTitle {
-        color: #ffffff;
-        font-size: 2.0rem;
-        font-weight: 400;
-        padding: 0;
-        margin: 0;
-    }
-
-    .headNav {
-        width: 50px;
-    }
-}
-
-.navList {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    .navOption {
-        .navLink {
-            color: #ffffff;
-            font-size: 1.6rem;
-            font-weight: 400;
-        }
-    }
-}
 
 .drumKit {
     .visualizer {
@@ -50,9 +16,6 @@
         }
     }
 }
-
-
-
 
 
 .drumSection {
@@ -114,10 +77,16 @@
     }
 }
 
+
 .drumBeat:last-child {
     border: 8px #222222 solid;
 }
 
-.fa-github {
-    color: #ffffff;
+.drumBeat:focus {
+  outline: none;
+  background-color: #F7EC4F;
+}
+
+.played {
+    background-color: #F7EC4F;
 }

@@ -9,13 +9,6 @@ const samples = {
 	"82": new Audio("./samples/hatOpen.wav"),
 	"84": new Audio("./samples/clap.wav"),
 
-
-	// color randomizer
-	"1": "#F7EC4F", // yellow
-	"2": "#F79665", // orange
-	"3": "#63FFE5", // blue
-	"4": "#24FF9E", // green
-
 	// visualizer array
 	bar: [".a", ".b", ".c", ".d", ".e", ".f", ".g", ".h", ".i", ".j"],
 }
@@ -28,11 +21,13 @@ samples.clickEvent = function() {
 		samples[classes].currentTime = 0;
 		samples[classes].play();
 		samples.animate();
-		$(`.${classes}`).css("background-color", "#d8d8d8");
+		$(`.${classes}`).css("background-color", "#f7ec4f");
+		samples.focus(`.${classes}`);
 
 	}).mouseup(function(){
 		const classes = this.className.slice(9, 11);
 		$(`.${classes}`).css("background-color", "#ffffff");
+		samples.focus(`.${classes}`);
 
 	});
 },
@@ -45,12 +40,13 @@ samples.keyboardEvent = () => {
 		samples[key].currentTime = 0;
 		samples[key].play();
 		samples.animate();		
-		$(`.${key}`).css("background-color", "#d8d8d8");
+		$(`.${key}`).css("background-color", "#f7ec4f");
+		samples.focus(`.${key}`);
 
 	}).keyup(function(event) {
 		const key = event.keyCode.toString();
 		$(`.${key}`).css("background-color", "#ffffff");
-			
+		samples.focus(`.${key}`);			
 	});
 },
 
@@ -103,6 +99,16 @@ samples.animate = function() {
 		duration: 160,
 	})
 }
+
+
+samples.focus = function(played) {
+	$(played).focusin(function() {
+		$(played).css("background-color", "#f7ec4f");
+	}).focusout(function() {
+		$(played).css("background-color", "#ffffff");
+	})
+}
+
 
 /////////////////////////////////////
 

@@ -309,10 +309,18 @@ a {
           align-items: center;
 }
 
-.navList .navOption .navLink {
+.navList .navLink .fa-github,
+.navList .navLink .fa-twitter {
   color: #ffffff;
   font-size: 1.6rem;
-  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.navList .navLink:focus,
+.navList .navLink:hover {
+  outline: none;
+  padding-bottom: 3px;
+  border-bottom: 2px #ffffff solid;
 }
 
 .drumKit .visualizer {
@@ -420,6 +428,55 @@ a {
   border: 8px #222222 solid;
 }
 
-.fa-github {
-  color: #ffffff;
+.drumBeat:focus {
+  outline: none;
+  background-color: #F7EC4F;
+}
+
+.played {
+  background-color: #F7EC4F;
+}
+
+@media (max-width: 700px) {
+  .drumKit .visualizer {
+    height: 50vh;
+  }
+  .drumBeat {
+    height: 100px;
+  }
+}
+
+@media (max-width: 544px) {
+  .wrapper {
+    width: 90%;
+  }
+  .drumBeat .inputKey {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .drumKit .visualizer {
+    height: 40vh;
+  }
+  .drumBeat {
+    height: 80px;
+    border: 4px #222222 solid;
+    border-right: 0px #222222 solid;
+  }
+  .drumBeat .inputDescription {
+    font-size: 1.4rem;
+  }
+  .drumBeat:last-child {
+    border: 4px #222222 solid;
+  }
+}
+
+@media (max-width: 400px) {
+  .wrapper {
+    width: 95%;
+  }
+  .drumBeat {
+    height: 70px;
+  }
 }
