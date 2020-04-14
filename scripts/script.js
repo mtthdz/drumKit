@@ -1,15 +1,8 @@
 
 
-// notes
-// order:
-//   1. namespace declaration (initial key & values)
-//   2. namespace methods
-//   3. init function
-//   4. document ready function
-
-
 // namespace
 const samples = {
+	// audio sample lookup
 	"81": new Audio("./samples/kick.wav"),
 	"87": new Audio("./samples/snare.wav"),
 	"69": new Audio("./samples/hatClosed.wav"),
@@ -24,30 +17,11 @@ const samples = {
 	"4": "#24FF9E", // green
 
 	// visualizer array
-	// rng selects random className within array between c - h
-	// rng +/- will select surrounding divs to increase height to add the "wave" look
 	bar: [".a", ".b", ".c", ".d", ".e", ".f", ".g", ".h", ".i", ".j"],
 }
 
-// visualizer fn
-// samples.visualizer = () => {
-// 	$(".drumBeat").mousedown(function() {
-// 		const random = Math.floor(Math.random() * 6) + 2;
-// 		const peak = samples.bar[random];
-// 		const minusOne = samples.bar[random - 1];
-// 		const minusTwo = samples.bar[random - 2];
-// 		const plusOne = samples.bar[random + 1];
-// 		const plusTwo = samples.bar[random + 2];
-		
-// 		samples.animate(peak, minusOne, minusTwo, plusOne, plusTwo);
-// 	});
-// }
 
-
-// click event method (MVP)
-// this.className retrieves both classes of the div clicked in the form of a string
-// .slice(9, 11) removes first class name and whitespace
-// colorValue returns a random color from the sample object 
+// click event
 samples.clickEvent = function() {
 	$(".drumBeat").mousedown(function() {
 		const classes = this.className.slice(9, 11);
@@ -64,11 +38,7 @@ samples.clickEvent = function() {
 },
 
 
-// keyboard event method
-// arrow fn is used to target the document object with "this"
-// event.keyCode retrieves the code of the key pressed
-// .toString() converts the keyCode from number to string, as numbers can't be used as object keys
-// colorValue returns a random color from the sample object 
+// keyboard event
 samples.keyboardEvent = () => {
 	$(this).keydown(function(event) {
 		const key = event.keyCode.toString();
